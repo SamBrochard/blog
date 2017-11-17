@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>THE BLOG</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="<?= $path."css/style.css" ?>">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pirata+One|VT323" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>The Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="<?= $path."index.php"?>">Home</a></li>
+				<li><a href="<?= $path."php/show_Author.php"?>">Les auteurs</a></li>
+				<li><a href="<?= $path."php/show_Cat.php"?>">les catégories</a></li>
+				<li><a href="<?=$path."php/admin.php"?>">gestion du blog</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+
+		<?php include $template.'.phtml' ?>		
+	</main>
+	<footer>
+		<img src="<?=$path ."image/in altis herbis ne vadas en couleur.png" ?>"></a>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione labore, quas officiis <a href="">corporis.</a></p>
+	</footer>
+	<script type="text/javascript" src="<?= $path."js/main.js"?>" defer></script>
+</body>
+</html>

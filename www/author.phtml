@@ -1,0 +1,12 @@
+<?php foreach ($author as $key): ?>
+	<fieldset>
+		<h1 ><a href="../php/article.php?id=<?= $key['Id'] ?>" ><?= nl2br(htmlspecialchars($key['Title'])) ?></a></h1>
+		<small>
+			<h2><a href="../php/category.php?idCat=<?= $key['Category_Id']?>">Catégorie :<?= nl2br(htmlspecialchars($key['Name'])) ?></a></h2>
+			<p><a id="author" href="../php/author.php?idAuthor=<?= $key['Author_Id']?>">Auteur : <?= $key['FirstName'] ?> <?= $key['LastName'] ?></a></p>
+			<p>Date de parution: <?= $key['CreationTimestamp'] ?></p>
+			<p><?= reduce(nl2br(htmlspecialchars($key['Contents'])),100) ?>...<a href="">Lire La suite</a></p>
+		</small>
+	</fieldset>
+<?php endforeach ;?>
+	

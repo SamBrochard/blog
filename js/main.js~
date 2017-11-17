@@ -1,0 +1,21 @@
+'use strict';
+
+$(document).on("click",".deleteCom",deleteCom);
+$(document).on("click", ".deletePost",deletePost);
+//$(document).on("click",".addCom",addCom);
+
+function deleteCom(){
+	var com = $(this).data('id');
+	console.log(com);
+	$.get('deleteCom.php?id='+com);
+	$(this).parent().parent().empty();
+}
+
+function deletePost(){
+	var article = $(this).data('index');
+	$.get('deletePost.php?id='+article);
+	$(this).parent().parent().empty();
+}
+
+
+

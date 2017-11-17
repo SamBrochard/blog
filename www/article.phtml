@@ -1,0 +1,41 @@
+<article>
+    <h1><?= nl2br(htmlspecialchars($article['Title'])) ?></h1>
+		<?php if ($article['img'] != NULL) : ?>
+			<img src="image/<?= $article['image'] ?>">
+		<?php endif ;?>
+		<small>
+			<h2><a href="../php/category.php?idCat=<?= $article['Category_Id']?>">Catégorie :<?= $article['Name'] ?></a></h2>
+			<p><a id="author" href="../php/author.php?idAutor=<?= $article['Author_Id']?>">Auteur : <?= $article['FirstName'] ?> <?= $article['LastName'] ?></a></p>
+				<p>Date de parution: <?= $article['CreationTimestamp'] ?></p>
+		</small>
+		<p>
+			<?= nl2br(htmlspecialchars($article['Contents'])); ?>
+		</p>
+		<div class="Commentaire">
+            <h4>Commentaires :</h4>
+			<?php if ($commAffiche != false): ?>
+				<h4>Commentaires :</h4>
+				<?php foreach ($commAffiche as $key) : ?>
+					<p> Par <?= htmlspecialchars($key['NickName']) ?>: </p>
+					<p><?= nl2br(htmlspecialchars($key['Contents'])) ?></p>
+					<p><?= $key['CreationTimestamp'] ?></p>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+		<fieldset id="bord">
+			<form  id="formComAdd"  ><!--  on a enlever les action= addComm.php quand on utlise pas la fonction ajax-->
+                <h4>Laissez un commentaire :</h4>
+                <ul id="form">
+					<li><label for="author">Pseudo</label>
+						<input type="text"  id="authorComAd" name="author" ></li>
+						<li><label for="comm" >Commentaire</label><textarea name="comm" id="comm" rows="5" ></textarea></li>
+						<li id= "touch"><!--<input  type="submit" name="envoyer">--><button id="sendAddCom">Ajouter</button></li>
+						<input type="hidden" class="addCom" name="id" value="<?= $_GET['id'] ?>" >
+				</ul>
+				</form>
+		</fieldset>
+    <a href="../index.php">Retour à l'accueil</a>
+</article>
+
+
+		

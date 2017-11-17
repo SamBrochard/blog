@@ -1,0 +1,41 @@
+<form id="PostModif" action="../php/modif.php" method="POST">
+	<ul>
+		<li>
+		<label for="Aut">Auteur : </label>
+			<select name="Author" id="Author">
+				<?php foreach ($Aut as $key ): ?>
+					<?php if ($key['Id'] == $Post["Author_Id"]) : ?>
+						<option value="<?= $key['Id']?>" selected= "selected"><?= $key['FirstName']?> <?= $key['LastName']?></option>
+					<?php else : ?>
+						<option value="<?= $key['Id']?>"><?= $key['FirstName']?> <?= $key['LastName']?></option>
+					<?php endif; ?>	
+				<?php endforeach; ?>
+			</select>
+		</li>
+		<li>
+			<label for="Category">Categorie : </label>
+			<select name="Category" id="Category">
+				<?php foreach ($Cat as $key ): ?>
+					<?php if ($key['Id'] == $Post["Category_Id"]) : ?>
+						<option value="<?= $key['Id']?>" selected= "selected"><?= $key['Name']?></option>
+					<?php else : ?>
+						<option value="<?= $key['Id']?>"><?= $key['Name']?></option>
+					<?php endif; ?>	
+				<?php endforeach; ?>
+			</select>
+		</li>
+		<li>
+			<label for="Title"></label>
+			<input type="text" name="Title" value="<?= $Post['Title']?>">
+		</li>
+		<li>
+			<label for="Content"></label>
+			<textarea  name="Content" class="champ"><?= $Post['Contents']?></textarea>
+        </li>
+        <li>
+		<input type="hidden"  value="<?=$Post['Id'] ?>" name="secret2">
+		<input type="submit" name="Envoyer">
+		</li>
+	</ul>
+	
+</form>

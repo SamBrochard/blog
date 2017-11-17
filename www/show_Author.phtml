@@ -1,0 +1,6 @@
+
+<ul>LISTE des auteurs :
+	<?php foreach ($showAut as $key): ?>
+		<a href="../php/author.php?idAuthor=<?= $key['Id']?>"><?= $key['FirstName'] ?> <?= $key['LastName']?></a>
+	<?php endforeach ?>
+</ul>

@@ -1,0 +1,35 @@
+<form id="InsertPost" action="../php/newPost.php" method="POST">
+	<ul>
+		<li>
+			<label for="Author">Autheur : </label>
+			<select name="Author" id="Author">
+				<?php foreach ($Aut as $key ): ?>
+					<option value="<?= $key['Id']?>"><?= $key['FirstName']?> <?= $key['LastName']?></option>
+				<?php endforeach; ?>
+			</select>
+		</li>
+		<li>
+			<label for="Category">Categorie : </label>
+			<select name="Category" id="Category">
+				<?php foreach ($Cat as $key ): ?>
+					<option value="<?= $key['Id']?>"><?= $key['Name']?></option>
+				<?php endforeach ?>
+			</select>
+		</li>
+		<li>
+			<label for="img">Image : </label>
+			<input type="file" name"img">
+		</li>
+		<li>
+			<label for="Title">Titre : </label>
+			<input type="text" name="Title">
+		</li>
+		<li>
+			<label for="Content"></label>
+			<textarea class="champ" name="Content"></textarea>
+        </li>
+        <li id="button">
+		    <input  type="submit" name="Envoyer">
+		</li>
+	</ul>
+</form>

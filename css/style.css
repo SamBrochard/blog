@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    /*eviter les bug sous chrome de transition*/
+    -webkit-transform: translate(0);
+}
+html {
+    font-size: 22px;
+}
+main{
+	background-color: #9BD393;
+	width:70%;
+	max-width: 800px;
+	margin: auto;
+	font-family: 'Pirata One', cursive;
+
+}
+header{
+	text-align: center;
+	background-image: url("../image/illu.jpg");
+	background-size: no-repeat;
+	padding: 3em;
+	margin-bottom: 1em;
+    font-family: 'Pirata One', cursive;
+
+
+
+}
+nav{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+#logo{
+	width: 5%;
+}
+ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	width: 60%;
+}
+li{
+	list-style: none;
+	padding: .5em;
+}
+header h1{
+	color: black;
+}
+header a {
+	color: black;
+	font-size: 20px;
+	/*background-image: url("../image/skull.png");*/
+	background-position: center;
+	padding: .5em;
+}
+
+footer{
+	margin-top: 1em;
+	text-align: center;
+	border: 2px solid #88D39D;
+}
+
+footer img{
+	width: 10%;
+}
+#touch {
+    margin-right: 0;
+    width: 20%;
+}
+/****************************Accueil**************/
+main > h1{
+	background-color:#88D39D ;
+	padding-left: 1em;
+	border: 2px solid #88D39D;
+}
+h1 a ,h2 a, #author {
+	text-decoration: none;
+	color: black;
+}
+
+/**********************formulaire 'InsertPost *****/'
+#form {
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+}
+
+#form li {
+	display: flex;
+	flex-flow: column wrap;
+	width: 50%;
+}
+
+.champ{
+
+	width: 100%;
+	height: 8em;
+}
+/***************** article ********/
+article{
+    margin-left: 1.5em;
+    padding-top: 2em;
+    max-width: 100%;
+
+}
+
+h3{
+	text-align: center;
+}
+.center {
+	text-align: center;
+	margin-left: 40%;
+}
+
+ article .Commentaire{
+	width: 60%;
+	margin: 1em auto ;
+	padding: 1em;
+}
+.commentaire div{
+	border: 2px solid black;
+}
+#form{
+    flex-flow: column;
+}
+
+#bord{
+    border: 2px solid black;
+    margin-right: 1.5em;
+}
+/***************** admin *********/
+#tableAdmin,#tableAdmin2 {
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+#tableAdmin thead,#tableAdmin2 thead {
+	background-color: #7BFFDD ;
+	margin: .5em;
+}
+#tableAdmin td,#tableAdmin2 thead{
+	width: 200px;
+	text-align: center;
+}
+
+#tableAdmin a{
+	text-decoration: none;
+	color: black;
+	margin: .5em;
+}
+
+#PostModif {
+	border: 1px solid black;
+}
+
+#PostModif ul,#InsertPost ul{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between ;
+	padding: 0;
+	margin: auto;
+	width: 50%;
+}
+
+#PostModif  {
+	margin: 0.5em 0;
+}
+
+#button{
+text-align: center;
+}

@@ -1,0 +1,65 @@
+<section>
+	<?php foreach ($post as $key): ?>
+			<fieldset>
+				<h1 ><a href="<?= $path."php/article.php?id=". $key['Id'] ?>" ><?= nl2br(htmlspecialchars($key['Title'])) ?></a></h1>
+				<?php if ($key['Img'] != NULL) : ?>
+					<img src="image/<?= $key['Img'] ?>">
+				<?php endif ;?>
+				<h2><a href="<?= $path ."php/category.php?idCat=". $key['Category_Id']?>">Catégorie :<?= $key['Name'] ?></a></h2>
+				<p><a id="author" href="<?= $path ."author.php?idAuthor=". $key['Author_Id']?>">Auteur : <?= $key['FirstName'] ?> <?= $key['LastName'] ?></a></p>
+				<p>Date de parution: <?= $key['CreationTimestamp'] ?></p>
+				<p><?= reduce(nl2br(htmlspecialchars($key['Contents'])),50) ?>...<a <a href="<?= $path."php/article.php?id=". $key['Id'] ?>" >>Lire La suite</a></p>
+			</fieldset>
+	<?php endforeach ;?>
+</section>
+
+
+
+<!-- correction
+
+
+// index.phtml
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <title>blog !</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		
+<! header 
+<header class="blog-header">
+    <h1><i class="fa fa-microphone"></i> Encore un Blog ?! </a></h1>
+</header>
+
+<! main 
+<main>
+	<ul class="post-list">
+			<?php foreach($posts as $post): ?>
+				<li class="post">
+					<h2>
+						<i class="fa fa-hand-o-right"></i>&nbsp;
+						<?= $post['Title'] ?>
+					</h2>
+
+					<article><?= substr($post['Contents'], 0, 100) ?>[...]</article>
+
+					<small>
+						Categorie <?= $post['Name'] ?> 
+						Rédigé par <?= $post['FirstName'] ?> <?= $post['LastName'] ?>
+						le <?= $post['CreationTimestamp'] ?>
+					</small>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+</main>
+
+<! footer 
+<footer class="blog-footer">
+    <small>Le blog des élèves de la 3W Academy</small>
+</footer>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+	<a href="../php/InserPost.php"><button>New</button></a>
+<table id="tableAdmin">
+	<thead>
+		<tr>
+			<th>Titre : </th>
+			<th>Auteur : </th>
+			<th>Categorie : </th>
+			<th>Action : </th>
+		</tr>
+	</thead> 
+	<tbody>
+		<?php foreach ($post as $key): ?>
+			<tr>
+			<td><?= nl2br(htmlspecialchars($key['Title'])) ?></td>
+			<td><?= $key['FirstName'] ?> <?= nl2br(htmlspecialchars($key['LastName'])) ?></td>
+			<td><?= $key['Name'] ?></td>
+			<td><button class="deletePost" data-index="<?=$key['Id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+			<a href="InserPost.php?id=<?=$key['Id'] ?>"><button><i class="fa fa-pencil" aria-hidden="true"></i></button></a></td>
+			</tr>
+		<?php endforeach ;?>
+	</tbody>
+</table>
+
+<table id="tableAdmin2">
+	<thead>
+		<tr>
+			<th>Titre : </th>
+			<th>Auteur : </th>
+			<th>Date : </th>
+			<th>Action : </th>
+		</tr>
+	</thead> 
+	<tbody>
+		<?php foreach ($com as $key): ?>
+			<tr>
+			<td><?= nl2br(htmlspecialchars($key['Title'])) ?></td>
+			<td><?= nl2br(htmlspecialchars($key['NickName'])) ?> </td>
+			<td><?= $key['CreationTimestamp'] ?></td>
+			<td><button class="deleteCom" data-id="<?= $key["Id"] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+			</tr>
+		<?php endforeach ;?>
+	</tbody>
+</table>

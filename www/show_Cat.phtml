@@ -1,0 +1,7 @@
+
+
+<ul>LISTE des categories
+	<?php foreach ($showCat as $key): ?>
+		<a href="../php/category.php?idCat=<?= $key['Id']?>"><?= $key['Name'] ?></a>
+	<?php endforeach ?>
+</ul>
